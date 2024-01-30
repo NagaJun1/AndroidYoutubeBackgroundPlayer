@@ -41,7 +41,7 @@
 
             <Button
                 android:id="@+id/btnChangePlayList"
-                android:text="video Id 変更"
+                android:text="プレイリストを再生"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
