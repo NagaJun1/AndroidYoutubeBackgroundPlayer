@@ -28,6 +28,7 @@
             <TextView
                 android:text="プレイリスト再生：リストID"
                 android:padding="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -42,6 +43,7 @@
             <Button
                 android:id="@+id/btnChangePlayList"
                 android:text="プレイリストを再生"
+                android:layout_marginBottom="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
