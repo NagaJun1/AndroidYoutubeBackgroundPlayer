@@ -2,6 +2,7 @@ package com.example.youtubeplayer.activity
 
 import android.app.Activity
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.youtubeplayer.R
 import com.example.youtubeplayer.constant.Strings
@@ -16,31 +17,38 @@ class PlayListActivity: Activity() {
 
         this.setContentView(R.layout.playlist_activity)
 
+        this.setVideoSheIsLegend()
+    }
+
+    /**
+     * 「She is legend」再生ボタン
+     */
+    private fun setVideoSheIsLegend() {
+        // this.findViewById<Button>(R.id.she_is_legend).setOnClickListener {
+
         // 「youtubePlayListView」でプレイリストが再生されるように更新
-        this.settingPlayListView()
+        this.settingPlayListView("PLYbqsCP6tq2pybnZCHizsG9xlleshRh6V")
     }
 
     /**
      * 「youtubePlayListView」でプレイリストを再生できるように設定
      */
-    private fun settingPlayListView() {
+    private fun settingPlayListView(playlistId: String) {
         val youtubeView = this.findViewById<YouTubePlayerView>(R.id.youtubePlayListView)
 
-        val playlistId = this.intent.getStringExtra(Strings.KEY_PLAY_LIST_ID)
+        // val playlistId = this.intent.getStringExtra(Strings.KEY_PLAY_LIST_ID)
 
-        if(playlistId is String) {
-            // プレイリスト指定用オプションを生成
-            val option = IFramePlayerOptions.Builder()
-                .controls(1)
-                .listType("playlist")
-                .list(playlistId) // プレイリストID
-                .build()
+        // プレイリスト指定用オプションを生成
+        val option = IFramePlayerOptions.Builder()
+            .controls(1)
+            .listType("playlist")
+            .list(playlistId) // プレイリストID
+            .build()
 
-            // 「youtube_player_view」を再構築
-            youtubeView.enableAutomaticInitialization = false
-            youtubeView.enableBackgroundPlayback(true)
-            youtubeView.initialize(object : AbstractYouTubePlayerListener() {}, option)
-        }
+        // 「youtube_player_view」を再構築
+        youtubeView.enableAutomaticInitialization = false
+        youtubeView.enableBackgroundPlayback(true)
+        youtubeView.initialize(object : AbstractYouTubePlayerListener() {}, option)
     }
 
     override fun onDestroy() {

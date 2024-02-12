@@ -14,7 +14,7 @@
         android:theme="@style/Theme.YoutubePlayer"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.PlayListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.PlayListActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
